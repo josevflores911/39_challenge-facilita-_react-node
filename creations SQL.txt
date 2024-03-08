@@ -1,0 +1,18 @@
+CREATE SCHEMA `facilita` ;
+
+CREATE TABLE `facilita`.`clients` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `telephone` INT NOT NULL,
+  `date` DATETIME NULL,
+  `latitude` INT NOT NULL,
+  `longitud` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `date`, `latitude`, `longitud`) VALUES ('jose', 'jose@mail.com', '123456789', '21/1/20', '1', '1');
+INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('vladi', 'vladi@mail.com', '23445643', '2', '2');
+INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('robert', 'ro@mail.com', '23435633', '3', '3');
+INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('mirian', 'miri@mail.com', '11234555', '4', '4');
+INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('sofi', 'sof@mail.com', '33322456', '5', '5');
