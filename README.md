@@ -1,12 +1,17 @@
 # 39_challenge-facilita-_react-node
 Sistema de Gerenciamento de Clientes
+
 Este projeto é uma solução para o desafio proposto no processo seletivo para a vaga de Desenvolvedor na Facilita Jurídico. A proposta envolve o desenvolvimento de um Sistema de Gerenciamento de Clientes com backend em Node.js e frontend em React, utilizando PostgreSQL como banco de dados.
 
 Requisitos
+
 Parte 1
+
 Listar e filtrar clientes com base nas informações cadastradas.
 Cadastrar novos clientes.
+
 Parte 2
+
 Otimizar as rotas de atendimento para maximizar a eficiência na visitação dos clientes.
 Calcular a rota partindo da empresa (0,0) e passando por todas as localizações dos clientes, retornando à empresa.
 Implementar um botão na tela de clientes que, ao ser clicado, mostra a ordem de visitação dos clientes na rota calculada.
@@ -27,8 +32,11 @@ MySQL v13.3
 React v17.0.2
 
 <h1>DDL da Tabela do Banco de Dados</h1>
+
 sql
+
 CREATE SCHEMA `facilita` ;
+
 
 CREATE TABLE `facilita`.`clients` (
   `id` INT NOT NULL,
@@ -40,6 +48,7 @@ CREATE TABLE `facilita`.`clients` (
   `longitud` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
 
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `date`, `latitude`, `longitud`) VALUES ('jose', 'jose@mail.com', '123456789', '21/1/20', '-1', '-10');
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('vladi', 'vladi@mail.com', '23445643', '2', '2');
