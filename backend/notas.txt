@@ -1,0 +1,27 @@
+package.json
+,
+  "type":"module" 
+
+
+  ---------------------------------------
+  
+  ----------------------------------------
+
+// Three different export styles
+export foo;
+export default foo;
+export = foo;
+
+// The three matching import styles
+import {foo} from 'blah';
+import foo from 'blah';
+import * as foo from 'blah';
+Roughly compiles to:
+
+exports.foo = foo;
+exports['default'] = foo;
+module.exports = foo;
+
+var foo = require('blah').foo;
+var foo = require('blah')['default'];
+var foo = require('blah');

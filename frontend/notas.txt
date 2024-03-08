@@ -1,0 +1,23 @@
+
+npx create-react-app <name>
+
+npm create vite@latest
+npm i
+
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
+
+npm i react-router-dom
+
+import React from "react";
+
+const CreateBooks = () => {
+  return (
+    <>
+        <div className="bg-red-400 text-white">App</div>
+    </>
+      )
+}
+
+export default CreateBooks
