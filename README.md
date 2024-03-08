@@ -13,13 +13,13 @@ Implementar um botão na tela de clientes que, ao ser clicado, mostra a ordem de
 
 <h2>Como Rodar o Projeto Localmente</h2>
 
-Clone o repositório: git clone https://github.com/josevflores911/39_challenge-facilita-_react-node.git
-Instale as dependências do backend: cd backend && npm install
-Instale as dependências do frontend: cd frontend && npm install
-Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo .env dentro da pasta backend.
-Rode o backend: npm run dev
-Rode o frontend: npm run dev
-Certifique-se de ter o Node.js e o PostgreSQL instalados localmente.
+- Clone o repositório: git clone https://github.com/josevflores911/39_challenge-facilita-_react-node.git
+- Instale as dependências do backend: cd backend && npm install
+- Instale as dependências do frontend: cd frontend && npm install
+- Configure o banco de dados PostgreSQL e atualize as informações de conexão no arquivo .env dentro da pasta backend.
+- Rode o backend: npm run dev
+- Rode o frontend: npm run dev
+- Certifique-se de ter o Node.js e o PostgreSQL instalados localmente.
 
 Ferramentas Utilizadas
 Node.js v14.17.3
@@ -48,7 +48,6 @@ INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `lon
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('sofi', 'sof@mail.com', '33322456', '5', '5');
 
 Vídeo Explicativo
-<a>link</a>
 Link para o Vídeo
 
 Considerações
