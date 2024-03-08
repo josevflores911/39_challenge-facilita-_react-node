@@ -76,6 +76,8 @@ Contato:
 
   <hr>
   
+![postgres](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/e60151dc-43eb-437e-9eeb-09bdff7130e8)
+
 ![database](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/7711d91c-bfb2-42d0-8850-458b89a8c9e8)
 
 ![home](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/d915a637-da42-4e3d-8157-e8eaa88b6adf)
