@@ -78,8 +78,9 @@ router.get('/map', async (request, response) => {
 router.get('/:id', async (request, response) => {
   try {
     const { id } = request.params;
-
+   
     const client = await getClientById(id);
+    console.log("here")
     console.log(client)
 
     return response.status(200).json(client);

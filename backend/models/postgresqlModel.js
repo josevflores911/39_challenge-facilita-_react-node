@@ -36,15 +36,18 @@ export async function updateClient({ name, email, telephone, latitude, longitud 
 
 export async function deleteClient(id) {
     // DML Operation: Delete
-    const { selectedRow } = await pool.query('SELECT * FROM facilita.clients WHERE id = $1', [id]);
+    const selectedRow = await pool.query('SELECT * FROM facilita.clients WHERE id = $1', [id]);
+    
     await pool.query('DELETE FROM facilita.clients WHERE id = $1', [id]);
-    return selectedRow
+    return selectedRow.rows[0]
 
 }
 export async function getClientById(id) {
     // DML Operation: Select (Get by ID)
-    const { selectedRow }  = await pool.query('SELECT * FROM facilita.clients WHERE id = $1', [id]);
-    return selectedRow[0]
+    
+    const  selectedRow  = await pool.query('SELECT * FROM facilita.clients WHERE id = $1', [id]);
+    
+    return selectedRow.rows[0]
 }
 
 
