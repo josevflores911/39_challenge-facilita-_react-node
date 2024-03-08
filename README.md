@@ -57,10 +57,15 @@ INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `lon
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('sofi', 'sof@mail.com', '33322456', '5', '5');
 
 Vídeo Explicativo
-Link para o Vídeo
+
+<a href="#">Link para o Vídeo</a>
 
 Considerações
+
 O desafio foi desenvolvido conforme os requisitos propostos, seguindo as melhores práticas de programação e documentação. Para qualquer dúvida ou esclarecimento, estou à disposição.
 
-Desenvolvedor: jose viera
-Contato: Josevflores911@gmail.com
+Desenvolvedor:
+- jose viera
+
+Contato:
+- Josevflores911@gmail.com
