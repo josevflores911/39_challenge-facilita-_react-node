@@ -25,6 +25,10 @@ Implementar um botão na tela de clientes que, ao ser clicado, mostra a ordem de
 - Rode o backend: npm run dev
 - Rode o frontend: npm run dev
 - Certifique-se de ter o Node.js e o PostgreSQL instalados localmente.
+- para configurar a base de dados precisa configurar o arquivo config.js na pasta backend
+
+- ![config](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/3d1f68a7-50c9-44ce-992f-2036b15abfa9)
+
 
 Ferramentas Utilizadas
 Node.js v14.17.3
@@ -72,6 +76,8 @@ Contato:
 
   <hr>
   
+![postgres](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/e60151dc-43eb-437e-9eeb-09bdff7130e8)
+
 ![database](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/7711d91c-bfb2-42d0-8850-458b89a8c9e8)
 
 ![home](https://github.com/josevflores911/39_challenge-facilita-_react-node/assets/59713685/d915a637-da42-4e3d-8157-e8eaa88b6adf)
