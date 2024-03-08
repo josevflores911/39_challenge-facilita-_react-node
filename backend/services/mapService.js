@@ -1,4 +1,4 @@
-import {  getIdsClients, getMapClients } from "../models/mysqlModel.js";
+import {  getIdsClients, getMapClients } from "../models/postgresqlModel.js";
 import { calculateDistance } from "./distanceService.js";
 import { generatePermutations } from './permutateService.js'
 

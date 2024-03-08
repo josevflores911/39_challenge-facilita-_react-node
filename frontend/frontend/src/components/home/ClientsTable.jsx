@@ -89,13 +89,15 @@ const ClientsTable = ({ clients, onClose }) => {
                 </tr>
               ))}
             </tbody>
-            <p className="absolute left-2 mr-10 px-4 py-1  rounded-lg">
+            
+            </table>
+            
+            <div className="absolute bottom-0 left-2 md-10 mr-10 px-4 py-1  rounded-lg">
               total distance:
-            </p>
-            <h2 className="absolute right-2 mr-10 px-4 py-1 bg-red-300 rounded-lg">
+            </div>
+            <div className="absolute bottom-0 right-2 md-4 mr-10 px-4 py-1 bg-red-300 rounded-lg">
               {distance}
-            </h2>
-          </table>
+            </div>
         </div>
       )}
     </div>

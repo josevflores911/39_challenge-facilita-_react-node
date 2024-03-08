@@ -1,5 +1,5 @@
 import express from 'express';
-import {getClients,createClient, getClientById, updateClient, deleteClient} from '../models/mysqlModel.js'
+import {getClients,createClient, getClientById, updateClient, deleteClient} from '../models/postgresqlModel.js'
 import { main } from '../services/mapService.js';
 
 
@@ -33,6 +33,7 @@ router.post('/', async (request, response) => {
     
     return response.status(201).send(client);
   } catch (error) {
+    console.log("here");
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }
@@ -51,7 +52,7 @@ router.get('/', async (request, response) => {
       data: rows
     });
   } catch (error) {
-   
+    console.log("haha");
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }

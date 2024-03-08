@@ -1,12 +1,14 @@
 import express from 'express';
-import { PORT, mongoDBURL,mysqlConfig } from './config.js';
+import { PORT, mongoDBURL,mysqlConfig ,pgConfig} from './config.js';
 import mongoose from 'mongoose';
 import mysqlRoute from './routes/mysqlRoute.js'
 import cors from 'cors';
 
 import mysql from "mysql2/promise.js"
+import pkg from 'pg';
 
-
+const { Pool } = pkg;
+const pool = new Pool(pgConfig);
 
 
 
@@ -46,8 +48,10 @@ app.use('/clients', mysqlRoute);
 
 
 
-let notconection = false;
-if (notconection) {
+let mongo = mongoDBURL.length>0?true:false;
+let mysqlaccess = mysqlConfig.password.length?true:false;
+
+if (mongo) {
   
   mongoose.set('strictQuery', false);
   
@@ -63,7 +67,7 @@ if (notconection) {
       console.log(error);
     });
 
-} else {
+} else if(mysqlaccess) {
   
   try {
     mysql.createConnection(mysqlConfig);
@@ -75,7 +79,19 @@ if (notconection) {
   } catch (error) {
     console.error('Error connecting to MySQL database:', error);
   }
-} 
+} else{
+  pool.connect()
+  .then(() => {
+    console.log('App connected to PostgreSQL database');
+
+    app.listen(PORT, () => {
+      console.log(`App is listening to port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Error connecting to PostgreSQL database:', error);
+  });
+}
 
 
 // //npm run dev
