@@ -17,7 +17,7 @@ INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `lon
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('mirian', 'miri@mail.com', '11234555', '4', '4');
 INSERT INTO `facilita`.`clients` (`name`, `email`, `telephone`, `latitude`, `longitud`) VALUES ('sofi', 'sof@mail.com', '33322456', '5', '5');
 
-
+.
 
 <h1>for postgresql</h1>
 
