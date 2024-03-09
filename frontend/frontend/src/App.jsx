@@ -5,16 +5,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
 import routesConfig from "./environment/paths.jsx";
-
-
+import HomeContainer from "./components/HomeContainer.jsx";
 
 const App = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-row h-100px">
+      <HomeContainer>
         <SideBar />
-
         <div className="w-full">
           <Routes>
             {routesConfig.map(({ path, element }, index) => (
@@ -22,8 +20,7 @@ const App = () => {
             ))}
           </Routes>
         </div>
-
-      </div>
+      </HomeContainer>
       <Footer />
     </>
   );
