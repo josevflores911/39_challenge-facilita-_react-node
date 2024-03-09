@@ -1,40 +1,30 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import CreateClients from "./pages/CreateClients";
-import ShowClient from "./pages/ShowClient";
-import EditClient from "./pages/EditClient";
-import DeleteClients from "./pages/DeleteClients";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SideBar from "./components/SideBar";
+import routesConfig from "./environment/paths.jsx";
+
 
 
 const App = () => {
   return (
     <>
-      <Header/>
-      <div  className="flex flex-row h-100px">
-        <div  style={{ backgroundColor: 'black', width: '200px', color: 'white',height:'97vh' }}>
-          <ul>
-            <li className="p-4">option link 1</li>
-            <li className="p-4">option link 2</li>
-            <li className="p-4">option link 3</li>
-          </ul>
-        </div>
+      <Header />
+      <div className="flex flex-row h-100px">
+        <SideBar />
+
         <div className="w-full">
-          <h2>***</h2>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/clients/create" element={<CreateClients />} />
-            <Route path="/clients/details/:id" element={<ShowClient />} />
-            <Route path="/clients/edit/:id" element={<EditClient />} />
-            <Route path="/clients/delete/:id" element={<DeleteClients />} />
+            {routesConfig.map(({ path, element }, index) => (
+              <Route key={index} path={path} element={element} />
+            ))}
           </Routes>
         </div>
+
       </div>
-     <Footer/>
-      
+      <Footer />
     </>
   );
 };
