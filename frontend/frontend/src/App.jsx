@@ -6,11 +6,14 @@ import CreateClients from "./pages/CreateClients";
 import ShowClient from "./pages/ShowClient";
 import EditClient from "./pages/EditClient";
 import DeleteClients from "./pages/DeleteClients";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 
 const App = () => {
   return (
     <>
-      <div className="bg-blue-400 text-white">header</div>
+      <Header/>
       <div  className="flex flex-row h-100px">
         <div  style={{ backgroundColor: 'black', width: '200px', color: 'white',height:'97vh' }}>
           <ul>
@@ -30,7 +33,8 @@ const App = () => {
           </Routes>
         </div>
       </div>
-      <div className="absolute w-full bottom-0 bg-blue-400 text-white">footer</div>
+     <Footer/>
+      
     </>
   );
 };
