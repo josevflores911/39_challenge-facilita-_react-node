@@ -21,7 +21,7 @@ const App = () => {
           </Routes>
         </div>
       </HomeContainer>
-      <Footer />
+      <Footer/>
     </>
   );
 };

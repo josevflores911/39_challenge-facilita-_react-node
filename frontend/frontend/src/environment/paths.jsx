@@ -10,10 +10,10 @@ import DeleteClients from "../pages/DeleteClients.jsx";
 
 const routesConfig = [
   { path: '/', element: <Home/> },
-  { path: '/clients/create', element: CreateClients  },
-  { path: '/clients/details/:id', element: ShowClient },
-  { path: '/clients/edit/:id', element: EditClient },
-  { path: '/clients/delete/:id', element: DeleteClients  },
+  { path: '/clients/create', element: <CreateClients/>  },
+  { path: '/clients/details/:id', element: <ShowClient/> },
+  { path: '/clients/edit/:id', element: <EditClient/> },
+  { path: '/clients/delete/:id', element: <DeleteClients/>  },
 ];
 
 export default routesConfig;
