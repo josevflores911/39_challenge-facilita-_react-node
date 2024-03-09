@@ -36,12 +36,15 @@ const Home = () => {
     const handleFilterClient = (userInput) => {
      
         let filterClients = [...clients];
-        filterClients=[...filterClients.filter(obj => obj.name.toLowerCase().startsWith(userInput.toLowerCase()))];
-
-        console.log(filterClients)
-
-        setClients(filterClients)
-
+        if (!isNaN(parseFloat(userInput)) && isFinite(userInput)) {
+            filterClients=[...filterClients.filter(obj => obj.telephone.toString().startsWith(userInput))];
+            console.log(filterClients)
+            setClients(filterClients)
+        } else {
+            filterClients=[...filterClients.filter(obj => obj.name.toLowerCase().startsWith(userInput.toLowerCase()))];
+            console.log(filterClients)
+            setClients(filterClients)
+        }
     }
 
   return (
@@ -65,7 +68,8 @@ const Home = () => {
         <Link to="/clients/create">
           <MdOutlineAddBox className="text-sky-800 text-4x1" />
         </Link>
-      </div>
+          </div>
+          <h3 className="mx-4 text-2xl ">Search name or telefone:</h3>
       <input
               type="text"
               onChange={(e)=>{handleFilterClient(e.target.value)}}
