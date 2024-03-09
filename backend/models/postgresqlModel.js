@@ -42,6 +42,7 @@ export async function deleteClient(id) {
     return selectedRow.rows[0]
 
 }
+
 export async function getClientById(id) {
     // DML Operation: Select (Get by ID)
     
@@ -49,7 +50,6 @@ export async function getClientById(id) {
     
     return selectedRow.rows[0]
 }
-
 
 
 

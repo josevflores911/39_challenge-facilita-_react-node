@@ -1,7 +1,7 @@
 import express from 'express';
 import { PORT, mongoDBURL,mysqlConfig ,pgConfig} from './config.js';
 import mongoose from 'mongoose';
-import mysqlRoute from './routes/mysqlRoute.js'
+import mysqlRoute from './routes/endpoints.js'
 import cors from 'cors';
 
 import mysql from "mysql2/promise.js"
