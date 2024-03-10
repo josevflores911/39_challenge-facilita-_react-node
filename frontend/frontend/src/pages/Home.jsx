@@ -8,22 +8,24 @@ import ClientsTable from "../components/home/ClientsTable";
 import ClientsCard from "../components/home/ClientsCard";
 
 const Home = () => {
+
+    const [originalArrayClient, setOriginalArrayClient] = useState([]);
+
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(false);
 
   //const [showType, setShowType] = useState('card')
 
   const [showModal, setShowModal] = useState(false);
-
-    
-    
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     setLoading(true);
     axios
       .get(`${dir}/clients`)
       .then((response) => {
-        setClients(response.data.data);
+          setClients(response.data.data);
+          setOriginalArrayClient(response.data.data);
         //console.log(response.data)
         setLoading(false);
       })
@@ -32,20 +34,28 @@ const Home = () => {
         setLoading(false);
       });
   }, []);
-    
-    const handleFilterClient = (userInput) => {
-     
-        let filterClients = [...clients];
-        if (!isNaN(parseFloat(userInput)) && isFinite(userInput)) {
-            filterClients=[...filterClients.filter(obj => obj.telephone.toString().startsWith(userInput))];
-            console.log(filterClients)
-            setClients(filterClients)
-        } else {
-            filterClients=[...filterClients.filter(obj => obj.name.toLowerCase().startsWith(userInput.toLowerCase()))];
-            console.log(filterClients)
-            setClients(filterClients)
-        }
+
+  const handleFilterClient = (userInput) => {
+    setFilter(userInput);
+    let filterClients = [...originalArrayClient];
+    if (!isNaN(parseFloat(userInput)) && isFinite(userInput)) {
+      filterClients = [
+        ...filterClients.filter((obj) =>
+          obj.telephone.toString().startsWith(userInput)
+        ),
+      ];
+      console.log(filterClients);
+      setClients(filterClients);
+    } else {
+      filterClients = [
+        ...filterClients.filter((obj) =>
+          obj.name.toLowerCase().startsWith(userInput.toLowerCase())
+        ),
+      ];
+      console.log(filterClients);
+      setClients(filterClients);
     }
+  };
 
   return (
     <div className="p-4">
@@ -68,11 +78,14 @@ const Home = () => {
         <Link to="/clients/create">
           <MdOutlineAddBox className="text-sky-800 text-4x1" />
         </Link>
-          </div>
-          <h3 className="mx-4 text-2xl ">Search name or telefone:</h3>
+      </div>
+      <h3 className="mx-4 text-2xl ">Search name or telefone:</h3>
       <input
-              type="text"
-              onChange={(e)=>{handleFilterClient(e.target.value)}}
+        type="text"
+        value={filter}
+        onChange={(e) => {
+          handleFilterClient(e.target.value);
+        }}
         className="m-4 text-blue-600 border border-blue-300 rounded outline-indigo-700"
         placeholder="Search..."
       />
